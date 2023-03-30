@@ -1,6 +1,6 @@
 {
-  "short_name": "Aplicação React",
-  "name": "Template básico Dev Samurai",
+  "short_name": "React app",
+  "name": "Github API",
   "icons": [
     {
       "src": "favicon.ico",
