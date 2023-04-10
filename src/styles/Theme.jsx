@@ -36,6 +36,7 @@ export const theme = {
     primary: "#F83600",
     secondary: "#FE8C00",
     metalDark: "#7f8c8d",
+    champagneDark: "#bdc3c7",
 
     // Default colors
     text: "#fff",
