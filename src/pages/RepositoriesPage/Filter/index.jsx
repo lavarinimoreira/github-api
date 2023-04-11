@@ -1,15 +1,11 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Container, Selector, Cleaner } from './styles'
+import { Container, Selector, Cleaner } from './styles';
 
-const Filter = function() {
-  const langs = [
-    {name: 'JavaScript', count: 5, color: '#f1c40f'},
-    {name: 'ShellScript', count: 2, color: '#0f5'},
-    {name: 'GLSL', count: 1, color: '#05f'},
-  ];
-
-  const selectors = langs.map(({name, count, color}) => (
+const Filter = function({ languages }) {
+  
+  const selectors = languages.map(({name, count, color}) => (
     <Selector
       key={name.toLowerCase()}
       color={color}
@@ -27,6 +23,16 @@ const Filter = function() {
       </Cleaner>
     </Container>
   )
+}
+
+Filter.propTypes = {
+  languages: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      count: PropTypes.string.isRequired,
+      color: PropTypes.string
+    }).isRequired
+  ).isRequired
 }
 
 export default Filter;
