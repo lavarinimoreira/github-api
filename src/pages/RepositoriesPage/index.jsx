@@ -1,49 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Profile from './Profile';
 import Filter from './Filter';
 import Repositories from './Repositories';
 
-import { Container, Sidebar, Main } from './styles';
+import { Container, Sidebar, Main, Loading } from './styles';
 
-import { getLangsFrom } from '../../services/api';
+import { getLangsFrom, getUser, getRepos } from '../../services/api';
 
 const RepositoriesPage = function() {
+  const [user, setUser] = useState();
+  const [repositories, setRepositories] = useState();
+  const [languages, setLanguages] = useState();
   const [currentLanguage, setCurrentLanguage] = useState();
+  const [loading, setLoading] = useState(true);
 
-  const user = {
-    login: 'lavarinimoreira',
-    name: 'Gabriel Lavarini Moreira',
-    avatar_url: 'https://avatars.githubusercontent.com/u/89891764?s=400&u=843c1548b562d9f28fd9c365b9232ea29c8a6752&v=4',
-    followers: 0,
-    following: 0,
-    company: null,
-    blog: 'https://lavarinimoreira.me',
-    location: 'Brazil',
-  }
+  useEffect(() => {
+    const loadData = async () => {
+        const [userResponse, repositoriesResponse] = await Promise.all([
+          getUser('lavarinimoreira'),
+          getRepos('lavarinimoreira')
+        ]);
 
-  const repositories = [
-    {
-      id: '1',
-      name: 'Repo 1',
-      description: 'Description',
-      html_url: 'https://lavarinimoreira.me',
-      language: 'JavaScript',
-    },
-    {
-      id: '2',
-      name: 'Repo 2',
-      description: 'Description',
-      html_url: 'https://lavarinimoreira.me',
-      language: 'TypeScript',
-    },
-  ];
+        setUser(userResponse.data);
+        setRepositories(repositoriesResponse.data);
+        setLanguages(getLangsFrom(repositoriesResponse.data))
+        
+        setLoading(false);
+    };
 
-  const languages = getLangsFrom(repositories);
+    loadData();
+  }, []);
 
   const onFilterClick = (language) => {
     setCurrentLanguage(language);
   };
+
+  if(loading) {
+    return <Loading>Loading...</Loading>
+  }
 
   return (
     <Container>
