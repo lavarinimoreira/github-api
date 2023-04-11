@@ -1,6 +1,6 @@
 # Github API
 
-This is a React application that consumes the Github API to show a user's projects.
+This is a React application that consumes the Github API to show a user's informations as well the projects.
 
 ## Usage
 
