@@ -13,7 +13,16 @@ import { getLangsFrom, getUser, getRepos } from '../../services/api';
 const RepositoriesPage = function() {
   const { login } = useParams();
 
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({
+    login: '',
+    name: '',
+    avatar_url: '',
+    followers: '',
+    following: '',
+    company: '',
+    blog: '',
+    location: '',
+  });
   const [repositories, setRepositories] = useState();
   const [languages, setLanguages] = useState();
   const [currentLanguage, setCurrentLanguage] = useState();

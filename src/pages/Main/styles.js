@@ -49,7 +49,7 @@ export const Button = styled(Link)`
   align-items: center;
   justify-content: center;
   background: transparent;
-  width: 80px;
+  width: 90px;
   height: 64px;
   color: ${(props) => props.theme.colors.text};
   border: 3px solid ${(props) => props.theme.colors.text};
