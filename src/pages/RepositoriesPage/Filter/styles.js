@@ -29,6 +29,7 @@ export const Selector = styled.button`
 
     &:hover,
     &.selected {
+        cursor: pointer;
         background: ${(props) => props.color || props.theme.colors.light};
         color:${(props) => 
             props.color ? props.theme.colors.white : props.theme.colors.black
@@ -52,6 +53,7 @@ export const Cleaner = styled.button`
     padding: 1rem;
 
     &:hover {
+        cursor: pointer;
         color: rgba(255, 255, 255, 0.5)
     }
 
