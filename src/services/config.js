@@ -1,5 +1,7 @@
 export const langColors = {
     javascript: '#f1c40f',
+    java: '#339999',
+    shell: '#00FF00',
     typescript: '#2980b9',
     python: '#2ecc71',
     html: '#e67e22',

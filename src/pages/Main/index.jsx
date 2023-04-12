@@ -5,6 +5,7 @@ import { MdSearch } from "react-icons/md";
 import { Container, Logo, Title, Form, Input, Button } from "./styles";
 
 import githubLogo from "../../assets/images/github-logo.svg";
+import Footer from "../../components/Footer";
 
 const Main = function () {
   const [login, setLogin] = useState("");
@@ -23,6 +24,7 @@ const Main = function () {
           <MdSearch size={42} />
         </Button>
       </Form>
+      <Footer />
     </Container>
   );
 };
