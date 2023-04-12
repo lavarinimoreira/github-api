@@ -20,14 +20,14 @@ const Repository = function({ repository }) {
   )
 }
 
-Repository.propType = {
+Repository.propTypes = {
   repository: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     html_url: PropTypes.string.isRequired,
     language: PropTypes.string,
-  }).isRequired
-}
+  }).isRequired,
+};
 
 export default Repository;
