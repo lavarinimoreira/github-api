@@ -4,9 +4,21 @@ This is a React application that consumes the Github API to show a user's inform
 
 ## Usage
 
-To use the application, enter a Github username in the input field and click the "Search" button. The application will retrieve the user's projects from the Github API and display them in a grid.
+That's the main page:
 
-You can click on a project to view more details, including the project description, the number of stars, forks, and watchers, and a link to the project on Github.
+![Main Page](/public/images/Main-Page.png)
+
+To use the application, enter a Github username in the input field and click the "Search" button:
+
+![Search User](/public/images/Search-User.png)
+
+The application will retrieve the user's projects from the Github API and display them in a grid:
+
+![Repositories Page](/public/images/Repositories-Page.png)
+
+You can click on some of the languages to filter the repositories. You can also click on the "SEE" link to be redirected directly to the project on Github.
+
+![Repositories Filter](/public/images/Repositories-Filter.png)
 
 ## Technologies Used
 
