@@ -6,7 +6,7 @@ import Profile from './Profile';
 import Filter from './Filter';
 import Repositories from './Repositories';
 
-import { Container, Sidebar, Main, Loading } from './styles';
+import { Container, Sidebar, Main, Loading, Button } from './styles';
 
 import { getLangsFrom, getUser, getRepos } from '../../services/api';
 
@@ -62,6 +62,9 @@ const RepositoriesPage = function() {
           currentLanguage={currentLanguage}
           onClick={onFilterClick}
         />
+        <Button to='/'>
+          Return
+        </Button>
       </Sidebar>
       <Main>
         <Repositories

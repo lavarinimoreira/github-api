@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Loading = styled.div`
     display: flex;
@@ -22,6 +23,27 @@ export const Sidebar = styled.aside`
     min-width: 20rem;
     max-height: 100%;
     overflow-y: hidden;
+`;
+
+export const Button = styled(Link)`
+    color: ${(props) => props.theme.colors.white};
+    background: ${(props) => props.theme.colors.container};
+    border: none;
+    padding: 0.8rem 2rem;
+    margin: 0 0 0 1em;
+    border-radius: 0 32px 0 32px;
+    text-decoration: none;
+    font-size: ${(props) => props.theme.fontSizes.small};
+
+    &:hover {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.5)
+    }
+
+    @media screen and (max-width: ${(props) => props.theme.breakpoints.md}){
+        text-align: center;
+        padding: 0 1rem;
+    }
 `;
 
 export const Main = styled.section`
